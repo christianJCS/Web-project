@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom"
 import { Registrar } from "./Registrar"
 import { Listar } from "./Listar"
 import { Estadistica } from "./Estadistica"
-import { Filtrado } from "./Filtrado"
 import Logo from "./imagenes/Logo.PNG"
 
 
@@ -12,7 +11,6 @@ export const MenuJefe = (props) => {
   const [reg, setReg] = useState("");
   const [lis, setLis] = useState("");
   const [est, setEst] = useState("");
-  const [fil, setFil] = useState("");
 
   
 
@@ -29,7 +27,6 @@ export const MenuJefe = (props) => {
     setReg("1");
     setLis("0");
     setEst("0");
-    setFil("0");
 
   }
 
@@ -38,7 +35,6 @@ export const MenuJefe = (props) => {
     setReg("0");
     setLis("1");
     setEst("0");
-    setFil("0");
 
   }
 
@@ -47,17 +43,9 @@ export const MenuJefe = (props) => {
     setReg("0");
     setLis("0");
     setEst("1");
-    setFil("0");
-
   }
 
-  function op_filtro(){
-    setReg("0");
-    setLis("0");
-    setFil("1");
-    setEst("0");
 
-  }
 
   return (
     
@@ -85,9 +73,7 @@ export const MenuJefe = (props) => {
                 <div className='col-2' style={{paddingLeft:20}}>
                 <NavLink to="" className="nav-link  h5  text-center" style={{color:'black'}} onClick={ op_listar }>Listar</NavLink>
                 </div>
-                <div className='col-2' >
-                <NavLink to="" className="nav-link  h5  text-center" style={{color:'black'}} onClick={ op_filtro } >Filtros</NavLink>
-                </div>
+
                 <div className='col-2' >
                 <NavLink to="" className="nav-link  h5  text-center" style={{color:'black'}} onClick={ op_estadistica }>Estadistica</NavLink>
                 </div>
@@ -119,7 +105,6 @@ export const MenuJefe = (props) => {
   { reg === "1" && <Registrar/> }
   { lis === "1" && <Listar/>}
   { est === "1" && <Estadistica/> }
-  { fil === "1" && <Filtrado/> }
 
 </>
   

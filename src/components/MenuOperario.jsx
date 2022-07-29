@@ -2,14 +2,12 @@ import React, { useState } from 'react'
 import { NavLink } from "react-router-dom"
 import { Registrar } from "./Registrar"
 import { Listar } from "./Listar"
-import { Filtrado } from "./Filtrado"
 import Logo from "./imagenes/Logo.PNG"
 
 export const MenuOperario = (props) => {
 
   const [reg, setReg] = useState("");
   const [lis, setLis] = useState("");
-  const [fil, setFil] = useState("");
  
   
 
@@ -25,21 +23,14 @@ export const MenuOperario = (props) => {
   function op_registrar(){
     setReg("1");
     setLis("0");
-    setFil("0");
   }
 
 
   function op_listar(){
     setReg("0");
     setLis("1");
-    setFil("0");
   }
-  function op_filtro(){
-    setReg("0");
-    setLis("0");
-    setFil("1");
 
-  }
 
 
 
@@ -67,9 +58,7 @@ export const MenuOperario = (props) => {
                 <div className='col-2' style={{paddingLeft:20}}>
                 <NavLink to="" className="nav-link  h5  text-center" style={{color:'gray'}} onClick={ op_listar} >Listar</NavLink>
                 </div>
-                <div className='col-2' >
-                <NavLink to="" className="nav-link  h5  text-center" style={{color:'gray'}} onClick={ op_filtro } >Filtros</NavLink>
-                </div>
+
               </div>
             </div>
             <div className='container-fluid '  >
@@ -95,7 +84,6 @@ export const MenuOperario = (props) => {
 
   { reg === "1" && <Registrar/> }
   { lis === "1" && <Listar/>}
-  { fil === "1" && <Filtrado/> }
 
 </>
   )
